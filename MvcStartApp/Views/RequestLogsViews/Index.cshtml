@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MvcStartApp.Models.Db.RequestLog>
+@{
+    ViewData["Title"] = "История запросов";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Дата и время</th>
+            <th>URL запроса</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Date.ToString("dd.MM.yyyy HH:mm:ss")</td>
+                <td>@log.Url</td>
+            </tr>
+        }
+    </tbody>
+</table>
